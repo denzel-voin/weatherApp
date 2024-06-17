@@ -1,0 +1,82 @@
+*, ::after, ::before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  font-size: calc( 10 / 16 * 100% )
+  color: white
+  font-family: Arial, sans-serif
+
+.page
+  height: 85vh
+  padding: 2rem
+  background-size: cover
+  background: url("../../src/images/bg-weather.png") no-repeat fixed
+
+.header
+  display: flex
+  justify-content: space-between
+  margin-bottom: 10rem
+  &__form
+    display: flex
+    gap: 1rem
+    align-items: center
+    &-btn
+      background-color: transparent
+      border: none
+
+#header__form-input
+  font-size: 2rem
+  background-color: transparent
+  border: none
+  border-bottom: 3px solid white
+  color: white
+  padding-bottom: 6px
+  &::placeholder
+    color: white
+    font-size: 2rem
+
+.description
+  font-weight: normal
+  font-size: 1.8rem
+
+.weather
+  display: flex
+  height: 100%
+  gap: 10rem
+  &__details
+    width: 100%
+    padding: 5rem
+    background: rgba(0, 0, 0, 0.27)
+    border-radius: 1.6rem
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+    backdrop-filter: blur(7.1px)
+    -webkit-backdrop-filter: blur(7.1px)
+    border: 1px solid rgba(0, 0, 0, 0.3)
+    display: flex
+    flex-direction: column
+    gap: 6.5rem
+  &__detail
+    &-container
+      display: flex
+      flex-direction: column
+      gap: 3.5rem
+    &-block
+      display: flex
+      justify-content: space-between
+      &-values
+        display: flex
+        gap: 1rem
+    &-condition
+      font-weight: bold
+  &__display
+    display: flex
+    align-items: center
+    gap: 3rem
+    &-degrees
+      font-size: 14.5rem
+    &-header
+      font-size: 6rem
+    &-description
+      font-size: 1.8rem

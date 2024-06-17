@@ -6,19 +6,71 @@
 		<meta name="theme-color" content="#000000" />
 		<meta name="msapplication-TileColor" content="#000000" />
 
-		<title>Product List</title>
+		<title>Web weather</title>
 	</head>
 	<body class="page">
-		<div class="container">
-			<h1>Product List</h1>
-			<div id="product-list" class="product-list"></div>
-			<div id="product-details" class="product-details"></div>
-
-			<div id="cart" class="cart">
-				<h2>Shopping Cart</h2>
-				<ul id="cart-items" class="cart-items"></ul>
-				<p>Total: $<span id="cart-total">0</span></p>
-				<button id="clear-cart">Clear Cart</button>
+		<header class="header">
+			<img class="header__logo-image" src="<%=require('../images/logo.svg')%>" alt="Web Weather! logo" />
+			<form class="header__form">
+				<label for="header__form-input">
+					<input type="text" id="header__form-input" placeholder="Search Location...">
+				</label>
+				<button class="header__form-btn">
+					<img src="<%=require('../images/fa_search.svg')%>" alt="">
+				</button>
+			</form>
+		</header>
+		<div class="weather">
+			<div class="weather__display">
+				<div class="weather__display-degrees">16°</div>
+				<div class="weather__display-location">
+					<h1 class="weather__display-header">London</h1>
+					<p class="weather__display-description">06:09 - Monday, 9 Sep ‘23</p>
+				</div>
+				<img src="<%=require('../images/Cloudy.svg')%>" alt="">
+			</div>
+			<div class="weather__details">
+				<h3 class="weather__detail-header description">
+					Weather Details...
+				</h3>
+				<div class="weather__detail-container">
+					<h2 class="weather__detail-condition description">thunderstorm with light drizzle</h2>
+					<div class="weather__detail-block">
+						<span class="weather__detail-block-description description">Temp max</span>
+						<div class="weather__detail-block-values">
+							<span class="weather__detail-block-value max-temp description">19°</span>
+							<img src="<%=require('../images/max-temp.svg')%>" alt="">
+						</div>
+					</div>
+					<div class="weather__detail-block">
+						<span class="weather__detail-block-description description">Temp min</span>
+						<div class="weather__detail-block-values">
+							<span class="weather__detail-block-value max-temp description">19°</span>
+							<img src="<%=require('../images/min-temp.svg')%>" alt="">
+						</div>
+					</div>
+					<div class="weather__detail-block">
+						<span class="weather__detail-block-description description">Humadity</span>
+						<div class="weather__detail-block-values">
+							<span class="weather__detail-block-value max-temp description">19°</span>
+							<img src="<%=require('../images/humadity.svg')%>" alt="">
+						</div>
+					</div>
+					<div class="weather__detail-block">
+						<span class="weather__detail-block-description description">Cloudy</span>
+						<div class="weather__detail-block-values">
+							<span class="weather__detail-block-value max-temp description">19°</span>
+							<img src="<%=require('../images/cloudy2.svg')%>" alt="">
+						</div>
+					</div>
+					<div class="weather__detail-block">
+						<span class="weather__detail-block-description description">Wind</span>
+						<div class="weather__detail-block-values">
+							<span class="weather__detail-block-value max-temp description">19°</span>
+							<img src="<%=require('../images/wind.svg')%>" alt="">
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
