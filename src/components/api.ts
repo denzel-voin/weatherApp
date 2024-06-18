@@ -66,9 +66,9 @@ class WeatherReq {
 
 
 
-fetch(`${request}${apiKey}&q=лондон&lang=ru`)
-	.then(respone => respone.json())
-	.then(result => {
-		const data = new WeatherReq(result);
-		console.log(data);
-	})
+// fetch(`${request}${apiKey}&q=лондон&lang=ru`)
+// 	.then(respone => respone.json())
+// 	.then(result => new WeatherReq(result))
+// 	.catch(error => console.error(error))
+
+export {request, apiKey, WeatherReq}
