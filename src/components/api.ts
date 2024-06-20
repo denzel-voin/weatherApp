@@ -1,4 +1,4 @@
-const apiKey :string = '636d223848964bdaae6193620241506';
+const apiKey   = '636d223848964bdaae6193620241506';
 
 interface Location {
 	name: string;
@@ -63,7 +63,7 @@ class WeatherReq {
 }
 
 const config = {
-	baseUrl: 'http://api.weatherapi.com/v1',
+	baseUrl: 'https://api.weatherapi.com/v1',
 	headers: {
 		authorization: '636d223848964bdaae6193620241506',
 		'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ const checkResponse = (res :Response) => {
 	}
 }
 
-const getWeatherInfo = (value :string = 'Москва') => {
+const getWeatherInfo = (value  = 'Москва') => {
 	return fetch(`${config.baseUrl}/forecast.json?key=${apiKey}&q=${value}&lang=ru`, {
 		method: 'GET',
 		headers: config.headers

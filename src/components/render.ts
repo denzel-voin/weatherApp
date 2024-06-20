@@ -1,4 +1,4 @@
-import { getWeatherInfo, WeatherReq } from './api';
+import { WeatherReq } from './api';
 
 const displayHeader = document.querySelector('.weather__display-header');
 const displayDegrees = document.querySelector('.weather__display-degrees');
