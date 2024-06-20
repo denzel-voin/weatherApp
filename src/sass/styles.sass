@@ -4,7 +4,7 @@
   box-sizing: border-box
 
 html
-  font-size: calc( 10 / 16 * 100% )
+  font-size: calc( 10 / 16 * 100%)
   color: white
   font-family: Arial, sans-serif
 
@@ -12,7 +12,7 @@ html
   height: 85vh
   padding: 2rem
   background-size: cover
-  background: url("../../src/images/bg-weather.png") no-repeat fixed
+  background: url("../../src/images/bg-weather.jpg") no-repeat fixed
 
 .header
   display: flex
@@ -27,6 +27,9 @@ html
       border: none
       cursor: pointer
 
+.header__logo-image
+  animation: pulse 2s infinite
+
 #header__form-input
   font-size: 2rem
   background-color: transparent
@@ -38,16 +41,24 @@ html
     color: white
     font-size: 2rem
 
+#header__form-input:focus
+  animation: grow 0.3s forwards
+
 .description
   font-weight: normal
   font-size: 1.8rem
+
+.animate
+  animation: fadeIn 2s
 
 .weather
   display: flex
   height: 100%
   gap: 10rem
+  flex-wrap: wrap
+  justify-content: center
   &__details
-    width: 100%
+    width: 50%
     padding: 5rem
     background: rgba(0, 0, 0, 0.27)
     border-radius: 1.6rem
@@ -58,6 +69,7 @@ html
     display: flex
     flex-direction: column
     gap: 6.5rem
+    //animation: fadeIn 2s
   &__detail
     &-container
       display: flex
@@ -81,3 +93,23 @@ html
       font-size: 6rem
     &-description
       font-size: 1.8rem
+
+@keyframes pulse
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes grow
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(1.05)

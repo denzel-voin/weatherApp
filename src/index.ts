@@ -1,24 +1,28 @@
 import './sass/styles.sass'
 import './components/api'
 import './components/render'
-import { request, apiKey, WeatherReq } from './components/api';
-import { displayDegrees, displayDescription, displayHeader } from './components/render';
+import { getWeatherInfo, WeatherReq } from './components/api';
+import { render } from './components/render';
 
 const form = document.querySelector('.header__form');
+
+getWeatherInfo()
+	.then(result => {
+		const data :WeatherReq = new WeatherReq(result);
+		render(data)
+	})
+	.catch(error => console.error(error))
 
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
 	const inputElement = document.querySelector('#header__form-input') as HTMLInputElement;
 	if (inputElement) {
 		const inputValue: string = inputElement.value;
-		fetch(`${request}${apiKey}&q=${inputValue}&lang=ru`)
-			.then(respone => respone.json())
+		getWeatherInfo(inputValue)
 			.then(result => {
 				const data :WeatherReq = new WeatherReq(result);
-				console.log(data);
-				displayHeader.textContent = data.name;
-				displayDegrees.textContent = `${Math.round(data.temp)}°`;
-				displayDescription.textContent = `${data.localTime}`
+				inputElement.value = '';
+				render(data);
 			})
 			.catch(error => console.error(error))
 	} else {

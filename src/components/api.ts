@@ -1,7 +1,5 @@
 const apiKey :string = '636d223848964bdaae6193620241506';
 
-const request :string = 'http://api.weatherapi.com/v1/forecast.json?key=';
-
 interface Location {
 	name: string;
 	localtime: string;
@@ -64,11 +62,28 @@ class WeatherReq {
 	}
 }
 
+const config = {
+	baseUrl: 'http://api.weatherapi.com/v1',
+	headers: {
+		authorization: '636d223848964bdaae6193620241506',
+		'Content-Type': 'application/json'
+	}
+}
 
+const checkResponse = (res :Response) => {
+	if(res.ok) {
+		return res.json();
+	} else {
+		return Promise.reject(`Ошибка: ${res.status}`);
+	}
+}
 
-// fetch(`${request}${apiKey}&q=лондон&lang=ru`)
-// 	.then(respone => respone.json())
-// 	.then(result => new WeatherReq(result))
-// 	.catch(error => console.error(error))
+const getWeatherInfo = (value :string = 'Москва') => {
+	return fetch(`${config.baseUrl}/forecast.json?key=${apiKey}&q=${value}&lang=ru`, {
+		method: 'GET',
+		headers: config.headers
+	})
+		.then(res => checkResponse(res));
+}
 
-export {request, apiKey, WeatherReq}
+export {WeatherReq, getWeatherInfo}

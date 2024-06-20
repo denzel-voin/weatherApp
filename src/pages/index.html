@@ -5,8 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
 		<meta name="msapplication-TileColor" content="#000000" />
+		<link rel="icon" href="<%=require('../images/logo.svg')%>">
 
-		<title>Web weather</title>
+		<title>Web⚡weather</title>
 	</head>
 	<body class="page">
 		<header class="header">
@@ -22,51 +23,51 @@
 		</header>
 		<div class="weather">
 			<div class="weather__display">
-				<div class="weather__display-degrees">16°</div>
+				<div class="weather__display-degrees"></div>
 				<div class="weather__display-location">
-					<h1 class="weather__display-header">London</h1>
-					<p class="weather__display-description">06:09 - Monday, 9 Sep ‘23</p>
+					<h1 class="weather__display-header"></h1>
+					<p class="weather__display-description"></p>
 				</div>
 				<img src="<%=require('../images/Cloudy.svg')%>" alt="">
 			</div>
 			<div class="weather__details">
 				<h3 class="weather__detail-header description">
-					Weather Details...
+					Детали погоды в регионе...
 				</h3>
 				<div class="weather__detail-container">
-					<h2 class="weather__detail-condition description">thunderstorm with light drizzle</h2>
+					<h2 class="weather__detail-condition description"></h2>
 					<div class="weather__detail-block">
-						<span class="weather__detail-block-description description">Temp max</span>
+						<span class="weather__detail-block-description description">Максимальная температура</span>
 						<div class="weather__detail-block-values">
-							<span class="weather__detail-block-value max-temp description">19°</span>
+							<span class="weather__detail-block-value max-temp description"></span>
 							<img src="<%=require('../images/max-temp.svg')%>" alt="">
 						</div>
 					</div>
 					<div class="weather__detail-block">
-						<span class="weather__detail-block-description description">Temp min</span>
+						<span class="weather__detail-block-description description">Минимальная температура</span>
 						<div class="weather__detail-block-values">
-							<span class="weather__detail-block-value max-temp description">19°</span>
+							<span class="weather__detail-block-value min-temp description"></span>
 							<img src="<%=require('../images/min-temp.svg')%>" alt="">
 						</div>
 					</div>
 					<div class="weather__detail-block">
-						<span class="weather__detail-block-description description">Humadity</span>
+						<span class="weather__detail-block-description description">Влажность</span>
 						<div class="weather__detail-block-values">
-							<span class="weather__detail-block-value max-temp description">19°</span>
+							<span class="weather__detail-block-value humidity description">19°</span>
 							<img src="<%=require('../images/humadity.svg')%>" alt="">
 						</div>
 					</div>
 					<div class="weather__detail-block">
-						<span class="weather__detail-block-description description">Cloudy</span>
+						<span class="weather__detail-block-description description">Облачность</span>
 						<div class="weather__detail-block-values">
-							<span class="weather__detail-block-value max-temp description">19°</span>
+							<span class="weather__detail-block-value cloudy description"></span>
 							<img src="<%=require('../images/cloudy2.svg')%>" alt="">
 						</div>
 					</div>
 					<div class="weather__detail-block">
-						<span class="weather__detail-block-description description">Wind</span>
+						<span class="weather__detail-block-description description">Ветер</span>
 						<div class="weather__detail-block-values">
-							<span class="weather__detail-block-value max-temp description">19°</span>
+							<span class="weather__detail-block-value wind description">19°</span>
 							<img src="<%=require('../images/wind.svg')%>" alt="">
 						</div>
 					</div>
